@@ -1,0 +1,40 @@
+.card {
+    min-height: 200px;
+    width: 380px;
+    background-color: #F9F9F9;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    margin: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card h1 {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color:#3C2317;
+  }
+.card h3 {
+      background-color: #CFFF8D;
+      color: #425F57;
+      padding: .5rem;
+      border-radius: 10px;
+      width: 7.7rem;
+      margin: 0;
+  }
+
+  .cardInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card img {
+    max-width: 150px;
+    height: auto;
+}

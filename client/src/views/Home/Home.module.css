@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:#f9f9f9;
+    min-height: 90vh;
+    padding-bottom: 7.8rem;
+    align-items: center;
+    background: rgb(239,255,171);
+    background: linear-gradient(132deg, rgba(239,255,171,0.835171568627451) 0%, rgba(184,252,211,0.87718837535014) 23%, rgba(122,248,255,0.5046393557422969) 45%, rgba(255,255,255,1) 75%);
+
+}
+
+.container {
+    background: #b8fcd3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    align-items: center;
+    margin: 0 .5rem ;
+    margin-bottom: 10px;
+}
+
+.buttonPrev {
+    padding: 10px;
+    background-color: #FCFFE7;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: #181D31;
+    font-weight: 800;
+    -webkit-box-shadow: -1px 3px 26px -4px rgba(0,0,0,0.22);
+    -moz-box-shadow: -1px 3px 26px -4px rgba(0,0,0,0.22);
+    box-shadow: -1px 3px 26px -4px rgba(0,0,0,0.22);
+    }
+.buttonNext {
+    padding: 10px;
+    background-color: #FCFFE7;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #181D31;
+    font-weight: 800;
+    -webkit-box-shadow: -1px 3px 26px -4px rgba(0,0,0,0.22);
+    -moz-box-shadow: -1px 3px 26px -4px rgba(0,0,0,0.22);
+    box-shadow: -1px 3px 26px -4px rgba(0,0,0,0.22);
+}

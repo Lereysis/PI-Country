@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.block-view {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #000000d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loader{
+  width: 100px;
+  height: 75px;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  border-radius: 100%;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  border: 15px solid transparent;
+  border-top: 25px solid #fff;
+  transform: rotate(45deg);
+  top: 50px;
+  left: -15px;
+}
+
+.loader:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+  border-radius: 50%;
+  background-color: #FF3D00;
+  box-shadow: 20px 0 #FF3D00, -20px 0 #FF3D00;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: rgba(255, 60, 0, 0.25);
+    box-shadow: 20px 0 rgba(255, 60, 0, 0.25), -20px 0 #FF3D00;
+  }
+  50% {
+    background-color: #FF3D00;
+    box-shadow: 20px 0 rgba(255, 60, 0, 0.25), -20px 0 rgba(255, 60, 0, 0.25);
+  }
+  100% {
+    background-color: rgba(255, 60, 0, 0.25);
+    box-shadow: 20px 0 #FF3D00, -20px 0 rgba(255, 60, 0, 0.25);
+  }
+}

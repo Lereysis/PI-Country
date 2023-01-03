@@ -1,0 +1,136 @@
+.btnPrimary {
+    background-color: #00a4ff;
+    border: 0;
+    color: #fff;
+    border-radius: .25rem;
+     cursor: pointer;
+     display: inline-block;
+     font-weight: 600;
+     font-size: 18px;
+      padding: .8rem 5rem;
+     margin: 15px 0;
+     outline: none;
+     width: 100%;
+   }
+   
+   .btnPrimary:hover {
+      opacity: .85;
+      transition: opacity .8s ease; 
+   }
+   
+   .btnPrimary:active {
+      box-shadow: #00000021 3px 3px 3px 1px;
+   }
+   
+ 
+ 
+  label {
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: #383838;
+  }
+ 
+ .boxForm {
+     background-color: #fff;
+     padding: 30px;
+     margin: 20px 0;
+     border-radius: 15px;
+     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+     display: flex;
+     gap: 1rem;
+ }
+ 
+.parent-box-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ .boxForm > form  {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+   width: 35rem;
+ }
+ .boxForm > form select {
+  border: 0;
+   border-bottom: 1px solid #00a4ff;
+   color: #000;
+   font-size: 18px;
+   outline: 0;
+   cursor: pointer;
+   flex-grow: 1;
+   min-width: 17rem;
+ }
+
+ .boxForm > form > div {
+   display: flex;
+   flex-direction: column;
+   gap: .25rem;
+   min-width: 17rem;
+   max-width: 17rem;
+ }
+ .boxForm > form > div:nth-child(5), .boxForm > form > div:nth-child(6)  {
+    width: 100%;
+    max-width: 100%;
+ }
+
+ .boxForm > form > div > input:not([type="submit"])  {
+   outline: 0;
+   border: 0;
+   border-bottom: 1px solid #00a4ff;
+   padding: 0.5rem 0rem;
+   line-height:15px;
+   font-size: 1rem;
+   margin: 0;
+ }
+
+ .boxForm > form > div > p  {
+   color: rgb(185, 0, 0);
+   font-size: 1rem;
+ }
+ .boxcountriesFather h3{
+   font-size: 1rem;
+   margin: 0;
+   margin-bottom: 1rem;
+ }
+ .boxcountriesFather {
+   background-color: #fff;
+   padding: 15px;
+   border-radius: 15px;
+   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+   min-height: 100%;
+   min-width: 35rem;
+ }
+ 
+ .types {
+     display: flex;
+     font-size: 1rem;
+     gap: 30px;
+     padding: 0.5rem 0;
+     justify-content: space-between;
+ }
+ 
+ .countries {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+ }
+
+ .countries button{
+   background-color: rgb(255, 64, 64);
+   color: #ffffff;
+   cursor: pointer;
+   font-weight: 400;
+   width: 3rem;
+   height: 2rem;
+ }
+ 
+ .boxcountries {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ 
