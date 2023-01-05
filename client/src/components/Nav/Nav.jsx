@@ -13,7 +13,7 @@ export default function Nav (){
             </div>
             <div className={style.buttonContent}>
                 <Link to="/home" className={style.button}>Home</Link>
-                <Link to="/create-activity" className={style.button}>Create a Activity</Link>
+                <Link to="/create-activity" className={style.button}>Create an Activity</Link>
             </div>
         </nav>
     )

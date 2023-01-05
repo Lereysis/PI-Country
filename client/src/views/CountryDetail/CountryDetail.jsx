@@ -12,6 +12,7 @@ export const CountryDetail = () => {
 
     const country = useSelector(state => state.countryDetail)
 
+
     useEffect(()=> {
         dispatch(getCountry(id))
         return () => {

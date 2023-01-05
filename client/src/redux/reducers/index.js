@@ -8,7 +8,8 @@ import {
     ORDER_BY_POBLATION,
     FILTER_BY_CONTINENT,
     GET_ACTIVITIES,
-    CLEAN_STATE_COUNTRY_DETAIL
+    CLEAN_STATE_COUNTRY_DETAIL,
+
 } from "../actions";
 
 const initialState = {
@@ -16,6 +17,7 @@ const initialState = {
     filterCountries: [],
     countryDetail:{},
     activities: [],
+
 };
 
 

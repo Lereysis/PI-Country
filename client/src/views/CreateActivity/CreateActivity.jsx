@@ -7,7 +7,7 @@ export const CreateActivity = () => {
     <>
       <div className={style.FormBox}>
         <Nav/>
-        <h1 className={style.title} >Crea una actividad</h1>
+        <h1 className={style.title}> Create an activity </h1>
         <Form/>
       </div>
     </>

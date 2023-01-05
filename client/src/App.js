@@ -6,6 +6,7 @@ import CountryDetail from './views/CountryDetail/CountryDetail';
 import NotFound from './views/NotFound/NotFound';
 import CreateActivity from './views/CreateActivity/CreateActivity';
 
+
 function App() {
   return (
     <Routes>
