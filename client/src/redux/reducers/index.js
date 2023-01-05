@@ -15,8 +15,7 @@ const initialState = {
     countries: [],
     filterCountries: [],
     countryDetail:{},
-    activities: []
-    // createActivity:{},
+    activities: [],
 };
 
 
@@ -41,28 +40,15 @@ const rootReducer = (state = initialState, action) => {
                 filterCountries:[...action.payload]
             }
         case ORDER_BY_ALPHABET:
-                aux = [...state.filterCountries]
-                if (action.payload === "AZ") {
-                    aux = state.filterCountries.sort((a,b)=> {
-                        if (b.name > a.name) return -1
-                    })
-                } else if (action.payload === "ZA") {
-                    aux = state.filterCountries.sort((a,b)=> {
-                        if (a.name > b.name) return -1
-                    })
-                } else {
-                    aux = [...state.countries]
-                }
-                return {
-                    ...state,
-                    filterCountries: [...aux]
-                }
-        case ORDER_BY_POBLATION:
             aux = [...state.filterCountries]
-            if (action.payload === "minPopulation") {
-                aux = state.filterCountries.sort((a,b)=> a.population - b.population)
-            } else if (action.payload === "maxPopulation") {
-                aux = state.filterCountries.sort((a,b)=> b.population - a.population)
+            if (action.payload === "AZ") {
+                    aux.sort((a,b)=> {
+                    if (b.name > a.name) return -1
+                })
+            } else if (action.payload === "ZA") {
+                    aux.sort((a,b)=> {
+                    if (a.name > b.name) return -1
+                })
             } else {
                 aux = [...state.countries]
             }
@@ -70,24 +56,35 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 filterCountries: [...aux]
             }
+        case ORDER_BY_POBLATION:
+            aux = [...state.filterCountries]
+            if (action.payload === "minPopulation") {
+                        aux.sort((a,b)=> a.population - b.population)
+            } else if (action.payload === "maxPopulation") {
+                        aux.sort((a,b)=> b.population - a.population)
+            } else if (action.payload === "reset") {
+                        aux = [...state.countries]
+            }
+            return {
+                ...state,
+                filterCountries: [...aux]
+            }
         case FILTER_BY_CONTINENT:
             const allCountries = state.countries;
-            const continentFiltered = action.payload === 'Filter by Continent' ? allCountries : allCountries.filter(c => c.continents === action.payload)
+            const continentFiltered = action.payload === 'All' ? allCountries : allCountries.filter(c => c.continents === action.payload)
             return {
                 ...state,
                 filterCountries: continentFiltered
             }
-        case GET_ACTIVITIES:
-                            
-        return {
-            ...state,
-            activities: action.payload
-        }
+        case GET_ACTIVITIES:                
+            return {
+                ...state,
+                activities: action.payload
+            }
         case CREATE_ACTIVITY:
-        return{
-            ...state,
-            activities: [...state.activities, action.payload]
-        }
+            return{
+                ...state,
+            }
         case FILTER_BY_CREATE:
             const activitiesbycountries = state.activities
             const countriesAll = state.countries
@@ -104,7 +101,7 @@ const rootReducer = (state = initialState, action) => {
         default:
             return { 
                 ...state,
-             };
+            };
 
     };
 };

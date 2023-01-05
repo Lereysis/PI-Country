@@ -14,9 +14,9 @@
 
 .card h1 {
     text-transform: capitalize;
-    font-size: 1.3rem;
     font-weight: 700;
     color:#3C2317;
+    font-size: 1rem;
   }
 .card h3 {
       background-color: #CFFF8D;
@@ -25,6 +25,7 @@
       border-radius: 10px;
       width: 7.7rem;
       margin: 0;
+      font-size: .8rem;
   }
 
   .cardInfo {

@@ -8,12 +8,11 @@ import style from "./Filters.module.css"
 
   const handleChange = (e) => {
     dispatch(orderByPoblation(e.target.value))
-    console.log(e.target.value)
   } 
   return (
     <div className={style.select}>
-        <select onChange={handleChange} name="countries" id="countries">
-            <option value="">Order by Population</option>
+        <select onChange={handleChange}>
+            <option value="reset">Order by Population</option>
             <option value="minPopulation">Min Population</option>
             <option value="maxPopulation">Max Population</option>
         </select>

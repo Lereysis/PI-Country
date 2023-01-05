@@ -20,45 +20,47 @@ export const getCountry = (id) => async dispatch => {
     return fetch(`http://localhost:3001/country/${id}`)
             .then(response => response.json())
             .then(data => dispatch({type: GET_COUNTRY, payload: data}))
-}
+};
 
-export const getCountryByName = (name) => async dispatch =>{
+export const getCountryByName = (name) => async dispatch => {
     return fetch(`http://localhost:3001/all?name=${name}`)
     .then(response=> response.json())
     .then(data=> dispatch({type:GET_COUNTRY_BY_NAME, payload: data}))
-}
+};
 
-export const createActivity = (data)=> async dispatch =>{
-    const response = await axios.post("http://localhost:3001/createActivity", data)
-    return dispatch({type: CREATE_ACTIVITY, payload: response.data})
+export const createActivity = (data) => async dispatch => {
+    try {  
+        const response = await axios.post("http://localhost:3001/createActivity", data)
+        return dispatch({type: CREATE_ACTIVITY, payload: response.data})
+    } catch (error) {
+        return dispatch({type: CREATE_ACTIVITY, payload: error})
+    }
 
- }
+};
 
- export const orderByAlphabet = (type) => {
+export const orderByAlphabet = (type) => {
     return {type:ORDER_BY_ALPHABET, payload: type}
-}
- export const cleanDetailCountry = () => {
+};
+
+export const cleanDetailCountry = () => {
     return {type:CLEAN_STATE_COUNTRY_DETAIL}
-}
+};
 
-export const orderByPoblation =(type) => {
+export const orderByPoblation = (type) => {
     return {type:ORDER_BY_POBLATION, payload:type}
-}
+};
 
-export const filterByCreate =(type) =>{
+export const filterByCreate = (type) => {
     return {type: FILTER_BY_CREATE, payload:type }
-} 
+} ;
 
 export function getAllActivities() {
     return async (dispatch) => {
       const act = await axios("http://localhost:3001/allActivities");
-      return dispatch({ type: "GET_ACTIVITIES", payload: act.data });
+      return dispatch({ type: GET_ACTIVITIES, payload: act.data });
     };
-  }
+  };
 
-  export function filterByContinent(payload){
-    return {
-        type: FILTER_BY_CONTINENT,
-        payload
-    }
-}
+export function filterByContinent(payload) {
+    return { type: FILTER_BY_CONTINENT, payload };
+};

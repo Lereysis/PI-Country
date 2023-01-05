@@ -15,7 +15,7 @@ function SearchBar() {
   }
   return (
     <div className={style.searchBar}>
-        <input onChange={handlechange} type="tex" placeholder="write a country"/>
+        <input onChange={handlechange} type="text" placeholder="write a country"/>
         <button onClick={handleClick} className={style.button}>Search</button>
     </div>
   )

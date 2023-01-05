@@ -9,12 +9,11 @@ const OrderByAlphabet = () => {
 
   const handleChange = (e) => {
     dispatch(orderByAlphabet(e.target.value))
-
   } 
   return (
     <div className={style.select}>
-        <select onChange={handleChange} name="countries" id="countries">
-            <option value="">Order by Alphabet</option>
+        <select onChange={handleChange}>
+            <option value="reset">Order by Alphabet</option>
             <option value="AZ">A - Z</option>
             <option value="ZA">Z - A</option>
         </select>

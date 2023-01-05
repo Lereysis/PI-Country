@@ -7,6 +7,9 @@ import validate from "../../helpers/Validate";
 export default function Form () {
     const dispatch = useDispatch();
     const countries = useSelector( state => state.countries);
+    const error = useSelector( state => state.errorCreateActivity);
+    const sucessfullCreateActivity = useSelector(state=> state.sucessfullCreateActivity)
+
     useEffect(()=>{
         dispatch(getAllCountries())
     },[dispatch])
@@ -49,8 +52,10 @@ export default function Form () {
             countries: state.countries.filter(el => el !== e.target.name)
         });
     }
+
     function handleSubmit(e) {
         e.preventDefault()
+        console.log(error)
         if (    errors.name !== undefined 
                 || errors.dificulty !== undefined 
                 || errors.duration !== undefined 
@@ -66,11 +71,8 @@ export default function Form () {
              ) {
                 console.log("2")
             return alert("Sorry, all fields are required");
-        } else {
-  
-            
-            dispatch(createActivity(state))          
-            
+        } else {  
+            dispatch(createActivity(state))               
             setState({
                 name: '',
                 dificulty: '',

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CardCountry from "../../components/CardCountry/CardCountry"
-import { getAllCountries} from "../../redux/actions/index"
-import style from "./Home.module.css"
 import Loading from '../../components/Loading/Loading';
 import NotFound from '../NotFound/NotFound';
 import Nav from '../../components/Nav/Nav'
 import ContainerFilter from '../../components/ContainerFilters/ContainerFilters'
+import { getAllCountries} from "../../redux/actions/index"
+import style from "./Home.module.css"
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,6 @@ const Home = () => {
     dispatch(getAllCountries())
   },[dispatch])
 
-  //Logic Pagination
   const [cardsPerView, setCardsPerView] = useState([])
   const [currentPage,setCurrentPage] = useState(0)
   const [pagesTotal, setTotalPages] = useState(0)

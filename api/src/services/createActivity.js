@@ -4,14 +4,22 @@ const createActivity = async (data)=>{
     try {
         const {name, dificulty, duration,season, countries} = data
 
-        const createdActivity = await Activity.create({
-            name,
-            dificulty,
-            duration,
-            season
-         });
+        const activity = await Activity.findOne({ where: { name } });
+
+        let createdActivity = null
+
+        if (!(activity instanceof Activity)) {
+            createdActivity = await Activity.create({
+                 name,
+                 dificulty,
+                 duration,
+                 season
+              });
+        } 
+        
          
          let foundCountry = countries.map(async element => {
+
             return await Country.findOne({
                 where:{
                     name:element
@@ -20,7 +28,11 @@ const createActivity = async (data)=>{
          });
 
          foundCountry.forEach(async element => {
-             createdActivity.addCountries(await element);
+            if(activity instanceof Activity){
+                activity.addCountries(await element);
+            } else {
+                createdActivity.addCountries(await element);
+            }
          });
 
          return createdActivity
